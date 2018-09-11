@@ -1,0 +1,14 @@
+{
+  "name": "number-game",
+  "version": "1.0.0",
+  "description": "A number guessing game in JavaScript",
+  "main": "game.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "steviekaye",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
