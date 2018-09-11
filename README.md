@@ -2,7 +2,9 @@ TBA
 
 Dependencies:
 
-- node.js & npm
+- node.js
+- npm
+- prompt-async
 
 To run:
 
