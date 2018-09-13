@@ -8,8 +8,8 @@ Dependencies:
 To run:
 
 ```
-git clone https://github.com/steviekaye/NumberGame.git
-cd NumberGame
+git clone https://github.com/steviekaye/number-game.git
+cd number-game
 npm install
 node game.js
 ```

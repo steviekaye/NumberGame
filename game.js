@@ -1,48 +1,39 @@
-console.log("Please guess a number between 1 and 50");
-
-var secretnumber = Math.floor(Math.random() * Math.floor(50)) + 1;
-// console.log(secretnumber);
-// var guess1;
-var num_guesses = 0;
-
+const secretNumber = Math.floor(Math.random() * Math.floor(50)) + 1;
+let numGuesses = 0;
 const prompt = require("prompt-async");
 
-async function example_async() {
+console.log("Please guess a number between 1 and 50");
+async function guessAsync() {
   if (num_guesses >= 5) {
-    console.log(`No more guesses! The answer was ${secretnumber}`);
+    console.log(`No more guesses! The answer was ${secretNumber}`);
     return;
   }
   prompt.start();
-  // var guess1;
 
-  // console.log(`Please guess a number`);
-  var { guess } = await prompt.get(["guess"]);
-  //
-  // Log the results.
+  let { guess } = await prompt.get(["guess"]);
+
   // console.log(`Your guess was ${guess}`);
-  //
 
-  // var guess1 = guess;
   if (guess == secretnumber) {
     console.log("You guessed right! Congratulations!");
     return;
-  } else if (guess > secretnumber) {
+  } else if (guess > secretNumber) {
     console.log("Too high! Try again");
-    num_guesses++;
-    example_async();
+    numGuesses++;
+    guessAsync();
   } else {
     console.log("Too low! Try again");
-    num_guesses++;
-    example_async();
+    numGuesses++;
+    guessAsync();
   }
 }
 
-async function error_handling_async() {
+async function errorHandlingAsync() {
   try {
-    await example_async();
+    await guessAsync();
   } catch (error) {
     console.error("An error occurred: ", error);
   }
 }
 
-error_handling_async();
+errorHandlingAsync();
