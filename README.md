@@ -2,12 +2,11 @@ TBA
 
 Dependencies:
 
-- node.js
-- npm
+- node.js & npm
 
 To run:
 
-```
+```bash
 git clone https://github.com/steviekaye/number-game.git
 cd number-game
 npm install

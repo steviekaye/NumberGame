@@ -3,19 +3,20 @@ const prompt = require("prompt-async");
 const secretNumber = Math.floor(Math.random() * Math.floor(50)) + 1;
 let numGuesses = 0;
 
-console.log("Please guess a number between 1 and 50");
 async function guessNumber() {
-  if (num_guesses >= 5) {
+  if (numGuesses >= 5) {
     console.log(`No more guesses! The answer was ${secretNumber}`);
     return;
   }
-  prompt.start();
 
+  prompt.start();
   let { guess } = await prompt.get(["guess"]);
 
-  // console.log(`Your guess was ${guess}`);
+  evaluateGuess(guess);
+}
 
-  if (guess == secretnumber) {
+function evaluateGuess(guess) {
+  if (guess == secretNumber) {
     console.log("You guessed right! Congratulations!");
     return;
   } else if (guess > secretNumber) {
@@ -29,7 +30,9 @@ async function guessNumber() {
   }
 }
 
-async function errorHandlingAsync() {
+async function playGame() {
+  console.log("Please guess a number between 1 and 50");
+
   try {
     await guessNumber();
   } catch (error) {
@@ -37,4 +40,4 @@ async function errorHandlingAsync() {
   }
 }
 
-errorHandlingAsync();
+playGame();
