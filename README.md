@@ -1,4 +1,6 @@
-TBA
+Number Game
+
+This is a very simple game, an exercise in working with node, async functions and validation schema.
 
 Dependencies:
 

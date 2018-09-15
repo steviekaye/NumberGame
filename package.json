@@ -8,9 +8,6 @@
   },
   "author": "steviekaye",
   "license": "ISC",
-  "devDependencies": {
-    "mocha": "^5.2.0"
-  },
   "dependencies": {
     "prompt-async": "^0.9.9"
   }
