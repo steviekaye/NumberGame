@@ -3,6 +3,17 @@ const prompt = require("prompt-async");
 const secretNumber = Math.floor(Math.random() * Math.floor(50)) + 1;
 let numGuesses = 0;
 
+const validationSchema = {
+  properties: {
+    guess: {
+      type: "integer",
+      minimum: 1,
+      maximum: 50,
+      message: "Please enter a number between 1 and 50"
+    }
+  }
+};
+
 async function guessNumber() {
   if (numGuesses >= 5) {
     console.log(`No more guesses! The answer was ${secretNumber}`);
@@ -10,7 +21,7 @@ async function guessNumber() {
   }
 
   prompt.start();
-  let { guess } = await prompt.get(["guess"]);
+  let { guess } = await prompt.get(validationSchema);
 
   evaluateGuess(guess);
 }
