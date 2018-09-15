@@ -1,12 +1,12 @@
-Number Game
+# Number Game
 
 This is a very simple game, an exercise in working with node, async functions and validation schema.
 
-Dependencies:
+### Dependencies:
 
 - node.js & npm
 
-To run:
+### To run:
 
 ```bash
 git clone https://github.com/steviekaye/number-game.git
